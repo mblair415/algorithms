@@ -19,8 +19,33 @@ if [4,3] is light, [5,8] is dark, and [19,3] is light
 the output is ['light', 'dark', 'light']
 */
 
+function illuminationIdeal(size, lamps, queries) {
+  let result = [];
 
-function illumination(size, lamps, queries) {
+  queries.forEach( query => {
+    let current = 'dark';
+    for (let i = 0; i < lamps.length; i++) {
+      let lamp = lamps[i];
+
+      if ((lamp[0] >= query[0] - 1 && lamp[0] <= query[0] + 1) &&
+      (lamp[1] >= query[1] - 1 && lamp[1] <= query[1] + 1)) {
+        break;
+      }
+      if (lamp[0] == query[0] || lamp[1] == query[1]) {
+        current = 'light';
+      }
+      if (Math.abs(lamp[0] - query[0]) == Math.abs(lamp[1] - query[1])) {
+        current = 'light';
+      }
+    }
+    result.push(current);
+  });
+
+  return result;
+}
+
+
+function illuminationFirstPass(size, lamps, queries) {
   let result = [];
 
   queries.forEach( query => {
@@ -75,11 +100,12 @@ function illumination(size, lamps, queries) {
 let n = 6;
 let lampArr = [[2,2], [1,5], [6,4]]
 let queryArr = [[2,3], [5,2], [4,6]]
-console.log('iterative solution ', illumination(n, lampArr, queryArr))
+console.log('iterative solution ', illuminationFirstPass(n, lampArr, queryArr))
 // expected ['dark','light','light']
 
 
-function illumination2(size, lamps, queries) {
+// breaking the code into sub functions.
+function illuminationSecondPass(size, lamps, queries) {
   let result = [];
 
   queries.forEach( query => {
@@ -147,11 +173,21 @@ function illumination2(size, lamps, queries) {
       }
 
       checkCol(lamp, query);
-      checkRow(lamp, query);
-      checkNE(lamp, ne);
-      checkNW(lamp, nw);
-      checkSW(lamp, sw);
-      checkSE(lamp, se);
+      if (current == 'dark') {
+        checkRow(lamp, query);
+      }
+      if (current == 'dark') {
+        checkNE(lamp, ne);
+      }
+      if (current == 'dark') {
+        checkNW(lamp, nw);
+      }
+      if (current == 'dark') {
+        checkSW(lamp, sw);
+      }
+      if (current == 'dark') {
+        checkSE(lamp, se);
+      }
     });
     result.push(current);
   });
@@ -159,5 +195,5 @@ function illumination2(size, lamps, queries) {
   return result;
 }
 
-console.log('recursive soluition ', illumination2(n, lampArr, queryArr))
+console.log('recursive soluition ', illuminationSecondPass(n, lampArr, queryArr))
 // expected ['dark', 'light', 'light]

@@ -1,6 +1,10 @@
-const ascendingArr = [1,2,3,4];
-const descendingArr = [4,3,2,1];
-const unsortedArr = [1,2,3,1]
+/*
+Checking to see if an array is sorted.
+*/
+
+// const ascendingArr = [1,2,3,4];
+// const descendingArr = [4,3,2,1];
+// const unsortedArr = [1,2,3,1]
 
 function isThisSorted(arr) {
   let sorted = true;
@@ -18,11 +22,13 @@ function isThisSorted(arr) {
   return sorted;
 }
 
-console.log('ascending test ', isThisSorted(ascendingArr))
-console.log('descending test ', isThisSorted(descendingArr))
-console.log('unsortedTest ', isThisSorted(unsortedArr))
+// console.log('ascending test ', isThisSorted(ascendingArr))
+// console.log('descending test ', isThisSorted(descendingArr))
+// console.log('unsortedTest ', isThisSorted(unsortedArr))
 
-// a much more basic approach
+
+
+// a much more basic approach to solve the same problem
 function ascendingTest(arr) { // returns true if input is in ascending order
   let sortedStatus = true;
 
