@@ -10,6 +10,9 @@ Ideally we can find problems that require two of these,
   ie:
   problem 1: array manipulation and if statements
   problem 2: string manipulation and object manipulation
+
+
+These are a set of algorithms I created/borrowed to test fundamentals for students.
 */
 
 
@@ -92,6 +95,25 @@ function sortByVowel(string) {
       result[1].push(word);
     }
   });
+
+  return result;
+}
+
+/*
+given a matrix of elements of numbers.  return each even element at an odd index.
+
+input: [10,11,12,14,18,15,21,8]
+output: [14,8]
+*/
+
+function evenElementAtOddIndex(array){
+  let result = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (i % 2 != 0 && array[i] % 2 == 0) {
+      result.push(array[i])
+    }
+  }
 
   return result;
 }
@@ -233,23 +255,12 @@ function evenNumberMatrix(num){
 }
 
 /*
-given a matrix of elements of numbers.  return each even element at an odd index.
-
-input: [10,11,12,14,18,15,21,8]
-output: [14,8]
+if the sum of input1 is an odd number add it to each element in input2.  then,
+return the even elements in input2.
+temp = input1.reduce(reducer)
+if temp % 2 != 0
+  input2.map(temp)
 */
-
-function evenElementAtOddIndex(array){
-  let result = [];
-
-  for (let i = 0; i < array.length; i++) {
-    if (i % 2 != 0 && array[i] % 2 == 0) {
-      result.push(array[i])
-    }
-  }
-
-  return result;
-}
 
 
 // ******** string manipulation problems ****************
