@@ -51,6 +51,7 @@ This problem also follows pascal's triangle.
 1   5  10   10   5     1
 */
 
+// solution using only recursion
 function latticePathsPureRecursion(n, m = n) {
   function latticeHelper(row, col) {
     if (row == 1 && col == 1) {
@@ -64,6 +65,7 @@ function latticePathsPureRecursion(n, m = n) {
 }
 
 
+// solution using memoization
 function latticePathsMemo(n, m = n) {
   let cache = { '0.0': 1};
 
@@ -82,6 +84,8 @@ function latticePathsMemo(n, m = n) {
   return latticeHelper(n, m);
 }
 
+
+// non recursive solution using tabulation
 function latticePathsTabulation(n, m) {
   let latticeLayer = new Array(n+1).fill(1);
 
