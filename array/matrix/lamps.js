@@ -31,10 +31,8 @@ function illuminationIdeal(size, lamps, queries) {
       (lamp[1] >= query[1] - 1 && lamp[1] <= query[1] + 1)) {
         break;
       }
-      if (lamp[0] == query[0] || lamp[1] == query[1]) {
-        current = 'light';
-      }
-      if (Math.abs(lamp[0] - query[0]) == Math.abs(lamp[1] - query[1])) {
+      if (lamp[0] == query[0] || lamp[1] == query[1] ||
+      Math.abs(lamp[0] - query[0]) == Math.abs(lamp[1] - query[1])) {
         current = 'light';
       }
     }
