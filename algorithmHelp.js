@@ -133,9 +133,12 @@ output: 11
 */
 
 function nthPrime(num) {
-  let counter = 0;
+  if (num == 1) return 2;
+  let counter = 1;
+  
   function isPrime(n){
-    for(let j = 2; j < n; j++) {
+    if (n % 2 == 0) return false;
+    for(let j = 3; j < n; j += 2) {
       if (n % j == 0) {
         return false;
       }
@@ -151,7 +154,6 @@ function nthPrime(num) {
       }
     }
   }
-
 }
 
 // ******** object manipulation problems ****************
@@ -166,7 +168,6 @@ output: '1 occurs 4 times'
 
 function mostFrequent(array){
   let result = {};
-  let maxCount = 0;
   let maxNum;
   array.forEach(num => {
     if (result[num]) {
@@ -176,8 +177,7 @@ function mostFrequent(array){
     }
   })
   for (let key in result) {
-    if (result[key] > maxCount) {
-      maxCount = result[key];
+    if (maxNum == undefined || result[key] > result[maxNum]) {
       maxNum = key;
     }
   }
