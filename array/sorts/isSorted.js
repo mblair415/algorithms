@@ -11,8 +11,12 @@ function isThisSorted(arr) {
   let start = 0;
   let end = arr.length -1;
 
-  while(start < arr.length - 1) {
+  while(start < end) {
     if (arr[start] > arr[start+1] && arr[end] > arr[end - 1]) {
+      sorted = false;
+      break;
+    }
+    if (arr[start] < arr[start+1] && arr[end] < arr[end - 1]) {
       sorted = false;
       break;
     }
