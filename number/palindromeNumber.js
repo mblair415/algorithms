@@ -8,6 +8,8 @@ output: true
 input: -121
 output: false  (-121 != 121-)
 
+from leetcode:
+Runtime: 236 ms, faster than 73.29% of JavaScript online submissions for Palindrome Number.
 */
 
 function palindromeNumber(num) {
