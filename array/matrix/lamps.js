@@ -24,6 +24,7 @@ function illuminationIdeal(size, lamps, queries) {
 
   queries.forEach( query => {
     let current = 'dark';
+    
     for (let i = 0; i < lamps.length; i++) {
       let lamp = lamps[i];
 
