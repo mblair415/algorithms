@@ -38,14 +38,14 @@ function bubbleSort(arr) {
   while (y > 0) {
     for (let i = 0; i < y; i++) {
       if (arr[i] > arr[i + 1]) {
-        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]]
+        [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
       }
     }
     y--;
   }
-  return arr
+  return arr;
 }
 
-console.log(bubbleSort(arrTest1))
-console.log(bubbleSort(arrTest2))
-console.log(bubbleSort(arrTest3))
+console.log(bubbleSort(arrTest1));
+console.log(bubbleSort(arrTest2));
+console.log(bubbleSort(arrTest3));

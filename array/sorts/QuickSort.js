@@ -51,6 +51,6 @@ function quickSort(arr) {
   return arr;
 }
 
-console.log(quickSort(arrTest1))
-console.log(quickSort(arrTest2))
-console.log(quickSort(arrTest3))
+console.log(quickSort(arrTest1));
+console.log(quickSort(arrTest2));
+console.log(quickSort(arrTest3));
