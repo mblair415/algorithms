@@ -68,11 +68,11 @@ function missingEleFromSortedArray(root, inputArr) {
     }
 
     nextNode(node.left);
-    targetArrIdx++;
-    if (node.value != inputArr[targetArrIdx - 1] && !target) {
+    if (node.value != inputArr[targetArrIdx] && !target) {
       target = node.value;
       return;
     }
+    targetArrIdx++;
     nextNode(node.right);
 
   }
