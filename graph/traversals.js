@@ -4,7 +4,7 @@ Breath first traversal in a graph
 
 function bfs(vertex){
   let visited = new Set().add(vertex.id),
-    queue = [vertex], // would be better with a linked list
+    queue = [vertex], // would be better with a linked list or a true queue
     result = [vertex.id],
     current;
 
@@ -27,7 +27,7 @@ Depth first traversal in a graph
 */
 
 function dfs(vertex){
-  let stack = [vertex],
+  let stack = [vertex], // would be better with a true stack
     visited = new Set().add(vertex.id),
     result = [],
     current;

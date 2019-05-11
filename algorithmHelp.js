@@ -100,7 +100,7 @@ function sortByVowel(string) {
 }
 
 /*
-given a matrix of elements of numbers.  return each even element at an odd index.
+given an array of elements of numbers.  return each even element at an odd index.
 
 input: [10,11,12,14,18,15,21,8]
 output: [14,8]
@@ -135,7 +135,7 @@ output: 11
 function nthPrime(num) {
   if (num == 1) return 2;
   let counter = 1;
-  
+
   function isPrime(n){
     if (n % 2 == 0) return false;
     for(let j = 3; j < n; j += 2) {
