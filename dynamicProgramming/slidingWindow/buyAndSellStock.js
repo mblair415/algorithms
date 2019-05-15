@@ -27,9 +27,9 @@ Memory Usage: 35.4 MB, less than 64.88% of JavaScript online submissions for Bes
 */
 
 const maxProfit = function(prices) {
-    let buy = 0;
-    let sell = 0;
-    let max = 0;
+    let buy = 0,
+      sell = 0,
+      max = 0;
 
     while (sell < prices.length) {
         if (prices[sell] < prices[buy]) {
