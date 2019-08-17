@@ -78,33 +78,35 @@ function matrixSpiral(n) {
 }
 
 const spiralOrder = matrix => {
-    if (!matrix.length) return [];
+  if (!matrix.length) return [];
 
-    const result = [];
-    let rowMin = 0,
-        rowMax = matrix.length - 1,
-        colMin = 0,
-        colMax = matrix[0].length - 1;
+  const result = [];
+  let rowMin = 0,
+    rowMax = matrix.length - 1,
+    colMin = 0,
+    colMax = matrix[0].length - 1;
 
-    while (rowMin <= rowMax && colMin <= colMax) {
-        for (let i = colMin; i <= colMax; i++) {
-            result.push(matrix[rowMin][i]);
-        }
-        rowMin++;
-        for (let j = rowMin; j <= rowMax; j++) {
-            result.push(matrix[j][colMax])
-        }
-        colMax--;
-        if (rowMin > rowMax || colMin > colMax) return result;
-        for (let x = colMax; x >= colMin; x--) {
-            result.push(matrix[rowMax][x]);
-        }
-        rowMax--;
-        for (let z = rowMax; z >= rowMin; z--) {
-            result.push(matrix[z][colMin]);
-        }
-        colMin++;
+  while (rowMin <= rowMax && colMin <= colMax) {
+    for (let i = colMin; i <= colMax; i++) {
+      result.push(matrix[rowMin][i]);
     }
-    return result;
+    rowMin++;
+    for (let j = rowMin; j <= rowMax; j++) {
+      result.push(matrix[j][colMax])
+    }
+    colMax--;
+
+    if (rowMin > rowMax || colMin > colMax) return result;
+
+    for (let x = colMax; x >= colMin; x--) {
+      result.push(matrix[rowMax][x]);
+    }
+    rowMax--;
+    for (let z = rowMax; z >= rowMin; z--) {
+      result.push(matrix[z][colMin]);
+    }
+    colMin++;
+  }
+  return result;
 
 };
