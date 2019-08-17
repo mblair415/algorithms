@@ -37,7 +37,7 @@ A version of this exists on leetcode.  The question asks you to fill an array
 with the contents of the matrix while moving in a spiral rather than to fill
 a matrix while moving in a spiral.  It's the same root problem.
 
-This solution got the following results:
+spiralOrder solution got the following results:
 Runtime: 44 ms, faster than 97.05% of JavaScript online submissions for Spiral Matrix.
 Memory Usage: 33.7 MB, less than 81.82% of JavaScript online submissions for Spiral Matrix.
 
@@ -76,3 +76,35 @@ function matrixSpiral(n) {
 
   return output;
 }
+
+const spiralOrder = matrix => {
+    if (!matrix.length) return [];
+
+    const result = [];
+    let rowMin = 0,
+        rowMax = matrix.length - 1,
+        colMin = 0,
+        colMax = matrix[0].length - 1;
+
+    while (rowMin <= rowMax && colMin <= colMax) {
+        for (let i = colMin; i <= colMax; i++) {
+            result.push(matrix[rowMin][i]);
+        }
+        rowMin++;
+        for (let j = rowMin; j <= rowMax; j++) {
+            result.push(matrix[j][colMax])
+        }
+        colMax--;
+        if (rowMin > rowMax || colMin > colMax) return result;
+        for (let x = colMax; x >= colMin; x--) {
+            result.push(matrix[rowMax][x]);
+        }
+        rowMax--;
+        for (let z = rowMax; z >= rowMin; z--) {
+            result.push(matrix[z][colMin]);
+        }
+        colMin++;
+    }
+    return result;
+
+};
