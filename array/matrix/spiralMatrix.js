@@ -32,6 +32,15 @@ step by step
 [-,9,-]
 [-,-,-]
 
+
+A version of this exists on leetcode.  The question asks you to fill an array
+with the contents of the matrix while moving in a spiral rather than to fill
+a matrix while moving in a spiral.  It's the same root problem.
+
+This solution got the following results:
+Runtime: 44 ms, faster than 97.05% of JavaScript online submissions for Spiral Matrix.
+Memory Usage: 33.7 MB, less than 81.82% of JavaScript online submissions for Spiral Matrix.
+
 */
 
 function matrixSpiral(n) {
