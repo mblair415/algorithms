@@ -29,6 +29,10 @@ Output: 13
      aPoint = bPoint
      curTotal = arr[aPoint]
    maxTotal = Math.max(curTotal, maxTotal)
+
+
+maxSubArray is a solution to a leetcode problem.
+It was faster than 65% of submissions and used less space than 75% of submissions
 */
 
 function maxConsecutiveSum(arr) {
@@ -52,3 +56,27 @@ function maxConsecutiveSum(arr) {
   }
   return maxTotal;
 }
+
+const maxSubArray = input => {
+  if (!input) return 0;
+  if (input.length === 1) return input[0];
+
+  let start = 0,
+      end = 0,
+      currentSum = input[0],
+      maxSum = input[0];
+  while (end < input.length -1) {
+      if (currentSum < 0) {
+          start = end + 1;
+          currentSum = 0;
+      }
+      end++;
+
+      if (input[end]) {
+          currentSum += input[end];
+      }
+      maxSum = Math.max(currentSum, maxSum);
+  }
+
+  return maxSum;
+};
