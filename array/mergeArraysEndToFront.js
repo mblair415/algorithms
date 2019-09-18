@@ -12,13 +12,8 @@ const newArray2 = [1,2,3];
 const newArray3 = [1,2,3];
 
 const option1 = (oldArr, newArr) => {
-  if (!oldArr.length) return newArr;
+  newArr.unshift(...oldArr.slice(oldArr.length-2));
 
-  if (oldArr.length >= 2) {
-    newArr.unshift(...oldArr.slice(oldArr.length-2));
-  } else {
-    newArr.unshift(...oldArr.slice(0));
-  }
   return newArr;
 };
 
