@@ -13,19 +13,13 @@ permutations('aabb'); // ['aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa']
 */
 
 const permutations = string => {
-  let permutationHelper;
   const result = [];
   const letterCount = {};
-
-  for (let i = 0; i < string.length; i++) {
-    letterCount[string[i]] ? letterCount[string[i]]++ : letterCount[string[i]] = 1;
-  }
-
-  permutationHelper = (obj, str) => {
+  const permutationHelper = (obj, str) => {
     for (let key in obj) {
       if (obj[key]) {
-        let newObj = {};
-        let newStr = str+key;
+        const newObj = {};
+        const newStr = str+key;
 
         if (newStr.length == string.length) {
           result.push(newStr);
@@ -44,6 +38,10 @@ const permutations = string => {
     }
     return;
   };
+
+  for (let i = 0; i < string.length; i++) {
+    letterCount[string[i]] ? letterCount[string[i]]++ : letterCount[string[i]] = 1;
+  }
 
   permutationHelper(letterCount, '');
   return result;
