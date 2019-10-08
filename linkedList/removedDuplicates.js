@@ -15,8 +15,9 @@ Output: 1->2->3
 
 
 
-Runtime: 72 ms, faster than 33.06% of JavaScript online submissions for Remove Duplicates from Sorted List.
-Memory Usage: 36.2 MB, less than 12.50% of JavaScript online submissions for Remove Duplicates from Sorted List.
+Runtime: 60 ms, faster than 92.56% of JavaScript online submissions for Remove Duplicates from Sorted List.
+Memory Usage: 36.1 MB, less than 15.63% of JavaScript online submissions for Remove Duplicates from Sorted List.
+
 
 ex 1:
  input: 1 -> 1 -> 2
@@ -51,7 +52,7 @@ if !adjacent
 return head
 
 */
-var deleteDuplicates = function(head) {
+const deleteDuplicates = head => {
     if (!head) {
         return head;
     }
@@ -59,7 +60,7 @@ var deleteDuplicates = function(head) {
     let current = head,
         adjacent = current.next;
 
-    while (current && adjacent) {
+    while (adjacent) {
         if (current.val != adjacent.val) {
             current.next = adjacent;
             current = adjacent;
@@ -68,9 +69,7 @@ var deleteDuplicates = function(head) {
 
     }
 
-    if (!adjacent) {
-        current.next = adjacent;
-    }
+    current.next = adjacent;
 
     return head;
 };
