@@ -36,9 +36,35 @@ to make this faster:
                 element = 0
 
 
-
 Runtime: 76 ms, faster than 91.92% of JavaScript online submissions for Set Matrix Zeroes.
 Memory Usage: 37.2 MB, less than 80.00% of JavaScript online submissions for Set Matrix Zeroes.
+
+
+how to make it faster in the future:
+the number of 0s in the orignal matrix may impact the optimal solution.
+the soloution below is clearly effective for the tests that were run.
+With a lower percentage of zeroes another algorithm that looks at the rowSet and Colset
+  and for each makes the adjustments would be faster than iterating over every single matrix element.
+  Would only be used for a large matrix with very few 0s in the original.
+  Should be faster than another N time iterating over full matrix.
+
+  loop through matrix (row, col)
+    if element is a 0 iterate a zeroCounter
+    track each row that needs to be changed in a set
+    track each column that needs to be changed in a set
+
+  if zeroCounter * 10 > matrix.length * matrix[0].length  <-- play with that number guessing 10%+ is enough
+    loop through matrix (row, col)
+      if element is not already a 0
+        if rowSet has current row or colSet has current col
+          element = 0
+  else
+    loop through rowSet
+      loop through cols
+        element = 0
+    loop through colSet
+      loop through rows
+        element = 0
 
 */
 
