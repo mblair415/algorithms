@@ -86,7 +86,7 @@ const setZeroes = matrix => {
     for (let col = 0; col < matrix[0].length; col++) {
       if (matrix[row][col] != 0) {
         if (rowSet.has(row) || colSet.has(col)) {
-          matrix[row][col] = 0
+          matrix[row][col] = 0;
         }
       }
     }
