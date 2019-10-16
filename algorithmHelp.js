@@ -29,21 +29,23 @@ input: 15, 3, 5
 output: [1,2,'fizz',4,'buzz','fizz',7,8,'fizz','buzz',11,'fizz',13,14,
 'fizzbuzz',16,17,'fizz',19,'buzz']
 */
-function fizzbuzzKing(num, a, b){
-  let result = [];
+const fizzbuzzKing = (num, a, b) => {
+  const result = [];
   for (let i = 1; i <= num; i++) {
-    if (i % a == 0 && i % b != 0) {
-      result.push('fizz');
-    } else if (i % b == 0 && i % a != 0) {
-      result.push('buzz');
-    } else if (i % a == 0 && i % b == 0) {
+    if (i % a == 0 && i % b == 0) {
       result.push('fizzbuzz');
+    } else if (i % a == 0) {
+      result.push('fizz');
+    } else if (i % b == 0) {
+      result.push('buzz');
     } else {
       result.push(i);
     }
   }
+
   return result;
-}
+};
+
 
 /*
 sort the input into arrays.
