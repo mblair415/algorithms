@@ -7,9 +7,8 @@ Memory Usage: 39.3 MB, less than 31.32% of JavaScript online submissions for Uni
 */
 
 const isUnivalTree = root => {
-    if (!root) {
-        return false;
-    }
+    if (!root) return false;
+    
     const target = root.val;
     let result = true;
 

@@ -14,9 +14,7 @@ Memory Usage: 39 MB, less than 27.69% of JavaScript online submissions for Rever
 */
 
 const reverseBetween = (head, m, n) => {
-    if (m === n) {
-        return head;
-    }
+    if (m === n) return head;
 
     let counter = 1,
         previous = null,

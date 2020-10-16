@@ -8,9 +8,7 @@ Memory Usage: 42.6 MB, less than 5.52% of JavaScript online submissions for Pali
 */
 
 const isPalindrome = head => {
-    if (!head) {
-        return true;
-    }
+    if (!head) return true;
 
     const createArr = () => {
         let current = head;
