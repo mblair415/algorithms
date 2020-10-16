@@ -6,6 +6,7 @@ You do not have the ability to create a new linked list.
 Input: l1 = [1,2,4], l2 = [1,3,4]
 Output: [1,1,2,3,4,4]
 
+As per leetcode:
 Runtime: 80 ms, faster than 95.28% of JavaScript online submissions for Merge Two Sorted Lists.
 Memory Usage: 40.2 MB, less than 16.04% of JavaScript online submissions for Merge Two Sorted Lists.
 */
